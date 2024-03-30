@@ -1,0 +1,372 @@
+.background-gradient {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(45deg, #383838, #bbbbbb, rgb(142, 142, 142));
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
+}
+
+.background-gradient-content {
+    position: relative;
+    z-index: 1;
+    padding: 200px;
+}
+
+@keyframes color {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;880;900;&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: .5s;
+}
+.header:hover::after{
+    left: 100%;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}
+
+.footer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: .5s;
+}
+.footer:hover::after{
+    left: 100%;
+}
+
+.logo{
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+.navbar a{
+    font-size: 1.15rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2.5rem;
+}
+#check{
+    display: none;
+}
+.icons{
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: #ffffff;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .header{
+        padding: 1.3rem 5%;
+    }
+}
+@media (max-width: 768px) {
+    .icons {
+        display: inline-flex;
+    }
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+    .icons #close-icon {
+        display: none;
+    }
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(234, 88, 4, 0.1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 .5rem 1rem rgba(176, 12, 12, 0.1);
+        overflow: hidden;
+        transition: .3s ease;
+    }
+    #check:checked~.navbar{
+        height: 17.7rem;
+    }
+    .navbar a {
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        transform: translateY(-50px);
+        opacity: 0;
+        opacity: 0;
+        transition: .3s ease;
+    }
+    #check:checked~.navbar a {
+        transform: translateY(0);
+        opacity: 1;
+        transition-delay: calc(.15s *var(--i));
+    }
+}
+.twelve_music {
+    size: 5px;
+    text-align: center;
+    padding: 8px;
+    margin-top: 85px;
+}
+
+.heartAttack_music {
+    size: 5px;
+    text-align: center;
+    padding: 8px;
+    margin-top: 85px;
+}
+
+/*
+.about-text p{
+    color: rgb(125, 125, 136);
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 18px;
+    margin-bottom: 45px;
+}
+*/
+
+/*
+.flexbox-aboutme {
+    position: absolute;
+    background-color: rgb(60, 60, 60);
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    background-color: #fffde8; 
+    padding: 20px;
+    border-radius: 7.7px; 
+    overflow: hidden;
+}
+*/
+/* styles.css */
+
+/* --------------------------------------------------------------------------- ABOUT ME CSS -------------------------------------------------------------------- */
+
+.about-me {
+    color: rgb(0, 0, 0);
+    font-size: 15.7px;
+    line-height: 2.35;
+    flex: 1;
+    position: fixed;
+    margin-left: -560px;
+    margin-right: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    z-index: 3;
+    order: 1;
+}
+
+.producer-text {
+    color: rgb(152, 9, 9);
+}
+
+.main {
+    display: flex;
+    align-items: flex-start; /* Align items at the start (top) of the flex container */
+}
+
+.about-text {
+    color: rgb(0, 0, 0);
+    margin-top: 200px;
+    margin-right: 200px;
+}
+
+.flexbox-aboutme {
+    max-width: 850px; /* Set the maximum width of the container */
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start; /* Align items at the start (top) of the flex container */
+    padding: 12px;
+    border-radius: 7.7px; /* Adjust the border radius as needed */
+    overflow: hidden; /* Clip the background color within the rounded corners */
+    margin-left: 550px; /* Adjust margin to move the entire container to the right */
+}
+
+.about-image {
+    max-width: 450px; /* Adjust the max-width as needed */
+    height: auto;
+    margin-right: 40px; /* Adjust margin to add space between image and text */
+    margin-top: 275px;
+    margin-left: 90px;
+    position: relative;
+
+}
+
+/* --------------------------------------------------------------------------- HOME PAGE CSS -------------------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Rubik', 'Poppins', sans-serif;
+}
+
+.head{
+    background: linear-gradient(#111,#111111bb),url("https://cdn.discordapp.com/attachments/1218581581124603926/1218583608667934770/b20bbc7ff20241576345fb4fff79468c.jpg?ex=6608316c&is=65f5bc6c&hm=c160c7bf411f01ff1b0d1f21ed887240acbdebec99b314ebba6e7f6fd640cabd&");
+    width: 100%;
+    min-height: 100vh;
+    padding: 10% 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.6rem;
+    color: #fff;
+}
+
+.title,.subtitle{
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.head .title{
+    font-size: 66px;
+    font-weight: 400;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.head .title .typewrite{
+    display: block;
+    font-size: 66px;
+    font-weight: 500;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    width: 0;
+    overflow: hidden;
+    animation: typing 5s infinite alternate;
+}
+
+@keyframes typing{
+    0%{
+        width: 0;
+    }
+    90%{
+        width: 80vw;
+    }
+    100%{
+        width: 0;
+    }
+}
+
+.head .subtitle{
+    font-size: 20px;
+    font-weight: 300;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.social{
+    display: flex;
+    gap: 1rem;
+}
+
+.social .social-link{
+    width: 50px;
+    height: 50px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    color: #777;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.social .social-link:hover{
+    color: #000;
+    background-color: #fff;
+    border-radius: 50%;
+}
